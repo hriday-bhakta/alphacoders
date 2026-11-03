@@ -5,7 +5,7 @@ int main()
     int n, k, c = 0;
 
     scanf("%d %d", &n, &k);
-    int arr[50];
+    int arr[n];
 
     for (int i = 0; i < n; i++)
     {
@@ -14,7 +14,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        if (arr[i] >= arr[k] && arr[i] != 0)
+        if (arr[i] >= arr[k - 1] && arr[i] > 0)
             c++;
     }
 
