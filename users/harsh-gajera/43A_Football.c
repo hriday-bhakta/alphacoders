@@ -22,9 +22,6 @@ int main() {
         }
     }
 
-    printf("%d\n", c);
-    printf("%s\n%s\n", name1, name2);
-
     if(c>0) {
         printf("%s", name1);
     } else {
