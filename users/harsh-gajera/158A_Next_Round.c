@@ -18,6 +18,8 @@ int main() {
         for(int i=0; i<k; i++) {
             if(sc[k-1-i] == 0) {
                 c--;
+            } else {
+                break;
             }
         }
     }
