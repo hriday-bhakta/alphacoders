@@ -1,0 +1,28 @@
+*.out
+*.exe
+*.app
+
+# Object files and libraries
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Debug symbols & memory dump files
+*.dSYM/
+vgcore.*
+core
+
+# Build folders
+bin/
+build/
+obj/
+
+# Editor / IDE configs
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+EOF
