@@ -3,7 +3,7 @@
 int main() {
     int n, k, c;
     scanf("%d %d", &n, &k);
-    int sc[k];
+    int sc[n];
     for(int i=0; i<n; i++) {
         scanf("%d", &sc[i]);
     }
@@ -15,7 +15,11 @@ int main() {
             }
         }
     } else {
-        c=0;
+        for(int i=0; i<k; i++) {
+            if(sc[k-1-i] == 0) {
+                c--;
+            }
+        }
     }
     printf("%d", c);
     return 0;
