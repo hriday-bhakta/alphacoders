@@ -10,7 +10,7 @@ int main() {
         int n, k;
         scanf("%d %d", &n, &k);
 
-        if (n >= (k*k) && n%2 == k%2)
+        if (n >= (k*k) && n%2 == k%2 && n!=0 && k!=0)
             ans[i] = 1;
         else
             ans[i] = 0;
