@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 long greatest(int n, int k){
-    long num = 0;
+    int t = (k/n)/n;
+    long num = k + (k + (k/n))/n;
 
-    while (k > 0){
+    while (t > 0){
         num++;
         if (num%n)
-            k--;
+            t--;
     }
 
     return num;
@@ -14,13 +15,18 @@ long greatest(int n, int k){
 
 int main() {
     int n, k, t;
+
     scanf("%d", &t);
 
-    int ans[t];
+    long ans[t];
 
     for (int i = 0; i < t; i++){
         scanf("%d %d", &n, &k);
         ans[i] = greatest(n, k);
-        printf("%ld\n\n", ans[i]);
     }
+
+    for (int i = 0; i < t; i++)
+        printf("%ld\n", ans[i]);
+
+    return 0;
 }
