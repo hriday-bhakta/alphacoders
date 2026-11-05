@@ -7,7 +7,7 @@ int main() {
     int ans[t];
 
     for (int i = 0; i < t; i++){
-        int n, k;
+        long long n, k;
         scanf("%d %d", &n, &k);
 
         if (n >= (k*k) && n%2 == k%2 && n!=0 && k!=0)
