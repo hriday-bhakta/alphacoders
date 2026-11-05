@@ -9,7 +9,7 @@ int main()
     {
         scanf("%d %d", &n, &k);
 
-        if ( (n % 2 == k % 2) && n > k)
+        if ( (n % 2 == k % 2) && n > (k*k))
             answer[i] = 1;
         else
             answer[i] = 0;
