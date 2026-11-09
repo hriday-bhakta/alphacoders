@@ -14,7 +14,7 @@ int main()
 
     for ( int i = 0; i < n; i++)
     {
-        if ( p[i] >= p[k-1] ) c++;
+        if ( p[i] >= p[k-1] && (p[i] > 0) ) c++;
     }
 
     printf("%d", c);

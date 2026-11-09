@@ -3,13 +3,13 @@
 int main()
 {
     int x=0,n;
-    char op[3];
+    char op[4];
 
     scanf("%d",&n);
 
     for (int i = 0; i < n; i++)
     {
-        scanf("%s", op);
+        scanf("%3s", op);
 
         if (op[1] == '+' ) x++;
         else x--;

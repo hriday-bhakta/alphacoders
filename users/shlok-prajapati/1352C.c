@@ -2,12 +2,12 @@
 
 int main()
 {
-    long int t,n,k,c;
-    scanf("%ld", &t);
+    int t,n,k,c;
+    scanf("%d", &t);
 
     for ( int i = 0; i < t; i++)
     {
-        scanf("%ld %ld", &n, &k);
+        scanf("%d %d", &n, &k);
         c = 0;
         while(k != 0)
         {
@@ -15,7 +15,7 @@ int main()
             if ( c % n != 0)
                 k--;
         }
-        printf("%ld\n", c);
+        printf("%d\n", c);
     }
 
     return 0;
