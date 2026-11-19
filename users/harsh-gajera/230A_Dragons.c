@@ -11,7 +11,8 @@ int main() {
     }
     int win;
     for(int i=0; i<n; i++) {
-        int j, win=0;
+        int j;
+        win=0;
         for(j=0; j<n-i; j++) {
             if(s > x[j]) {
                 win = 1;
