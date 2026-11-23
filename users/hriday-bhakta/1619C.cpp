@@ -1,57 +1,64 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <cmath>
 
 using namespace std;
-// use long
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    vector<long> ans;
 
-    int t, p;
-    long a, s;
-
+    int t;
     cin >> t;
-
-    while (t--){
+    vector<long long> ans;
+    while (t--) {
+        long long a, s;
         cin >> a >> s;
-        long b = 0;
-        int c = 0;
-        while (a){
+
+        long long b = 0;
+        long long mult = 1; // Tracks place value in b (1, 10, 100...)
+        bool possible = true;
+
+        while (a > 0) {
             if (s < a) {
-                b = -1;
+                possible = false;
                 break;
             }
-            p = 1;
-            long dig = a % 10;
-            
-            long r;
-            
-            r = s % (long)round(pow(10, p));
-            //cout << r << "\n";
-            while (r - dig < 0){
-                p++;
-                //cout << s << endl;
-                r = s % (long)round(pow(10, p));
 
-                //cout <<  (long)round(pow(10, p)) << "\n";
+            long long dig_a = a % 10;
+            long long dig_s = s % 10;
+
+            if (dig_s >= dig_a) {
+                b += (dig_s - dig_a) * mult;
+                s /= 10;
+            } else {
+                // Need 2 digits from s
+                dig_s = s % 100;
+                long long diff = dig_s - dig_a;
+
+                // diff must be a valid single digit (0 to 9)
+                if (diff < 0 || diff > 9) {
+                    possible = false;
+                    break;
+                }
+                b += diff * mult;
+                s /= 100;
             }
-            
-            b += round(pow(10, c))*(r-dig);
-            a /= 10;
-            s /= pow(10, p);
-            c++;
 
-            //cout << "B: "<< b << "\n";
-            //cout << "A: " << a << "\n";
+            a /= 10;
+            mult *= 10;
         }
-        ans.push_back(b);
+
+        if (!possible) {
+            ans.push_back(-1);
+        } 
+        else {
+            // Attach any remaining front digits of s
+            b += s * mult;
+            ans.push_back(b);
+        }
     }
 
-    for (long res : ans)
+    for (long long res : ans)
         cout << res << "\n";
 
     return 0;
