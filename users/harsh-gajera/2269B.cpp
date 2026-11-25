@@ -18,6 +18,7 @@ void solve() {
     for(int i=0; i<n; i++) {
         cin >> a[i];
     }
+    
     vector<int> results;
     for(int i=0; i<n; i++) {
         int c=0;
@@ -34,6 +35,7 @@ void solve() {
             c++;
         }
     }
+    
     int freq[9] = {};
     for(int x : results) {
         switch(x) {
@@ -65,6 +67,7 @@ void solve() {
             freq[8]++;       
         }
     }
+    
     int ans = 0;
     for(int i : freq) {
         ans += i*(i-1)/2;
